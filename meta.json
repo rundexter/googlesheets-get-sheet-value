@@ -4,23 +4,40 @@
 {
     //Required. Inputs the module expects.
     "inputs": [
-        //e.g.
-        /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "worksheet",
+            "title":"Worksheet ID"
+        },
+        {
+            "id": "startRow",
+            "title":"Start Row"
+        },
+        {
+            "id": "startColumn",
+            "title":"Start Column"
+        },
+        {
+            "id": "numRows",
+            "title":"Last Row"
+        },
+        {
+            "id": "numColumns",
+            "title":"Last Column"
         }
-        */
     ],
     //Required. Outputs the module emits.
     "outputs": [
-      //e.g.
-      /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "sheet",
+            "title":"rectangular grid of values"
         }
-      */
     ],
+    "providers": [{
+        "name": "google",
+        "scopes": [
+            "https://spreadsheets.google.com/feeds/"
+        ]
+    }],
+    "icon": "google",
     "title": "Google Sheets Get Sheet Values" /* Required.A display name for the module */
 }

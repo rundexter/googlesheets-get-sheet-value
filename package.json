@@ -1,12 +1,17 @@
 {
-    "name": "google-sheets-get-sheet-values",
-    "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
-    "author": "Alexander",
-    "license": "ISC",
-    "private": true,
-    "dependencies": {
-        "lodash": "^3.9.3"
-    }
+   "name": "google-sheets-get-sheet-values",
+   "version": "0.0.1",
+   "description": "Returns the rectangular grid of values for this range starting at the given coordinates",
+   "main": "index.js",
+   "author": "Run Dexter, Inc",
+   "license": "MIT",
+   "private": true,
+   "dependencies": {
+      "edit-google-spreadsheet": "^0.2.21",
+      "lodash": "^3.10.1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/rundexter/googlesheets-get-sheet-value"
+   }
 }
