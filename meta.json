@@ -3,33 +3,36 @@
  */
 {
     //Required. Inputs the module expects.
-    "inputs": [
-        {
-            "id": "worksheet",
-            "title":"Worksheet ID"
-        },
-        {
-            "id": "startRow",
-            "title":"Start Row"
-        },
-        {
-            "id": "startColumn",
-            "title":"Start Column"
-        },
-        {
-            "id": "numRows",
-            "title":"Last Row"
-        },
-        {
-            "id": "numColumns",
-            "title":"Last Column"
-        }
-    ],
+    "inputs": [{
+            "id"          : "spreadsheet_id",
+            "title"       : "Sheet ID",
+            "description" : "Found in URL of worksheet"
+        }, {
+            "id"    : "worksheet",
+            "title" : "Worksheet Index",
+            "description" : "Sheet index (defaults to 1)"
+        }, {
+            "id"    : "startRow",
+            "title" : "Start Row",
+            "description" : "Row to start reading from (defaults to 1)"
+        }, {
+            "id"    : "startColumn",
+            "title" : "Start Column",
+            "description" : "Column to start reading from (defaults to 1)"
+        }, {
+            "id"    : "numRows",
+            "title" : "Last Row",
+            "description" : "Total rows to read. If not specified, will continue until end of sheet"
+        }, {
+            "id"    : "numColumns",
+            "title" : "Last Column", 
+            "description" : "Total columns to read. If not specified, will continue until end of sheet"
+        }],
     //Required. Outputs the module emits.
     "outputs": [
         {
-            "id": "sheet",
-            "title":"rectangular grid of values"
+            "id": "values",
+            "title":"Values"
         }
     ],
     "providers": [{

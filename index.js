@@ -5,16 +5,16 @@ var _           = require('lodash')
 
 module.exports = {
     pickSheetData: function (rows, startRow, startColumn, numRows, numColumns) {
-        var sheetData = {};
+        var sheetData = []
+          , row = []
+        ;
 
         for (var rowKey = startRow; rowKey <= numRows; rowKey++) {
-
+            row = [];
+            sheetData.push(row);
             for (var columnKey = startColumn; columnKey <= numColumns; columnKey++) {
-
                 if (rows[rowKey] !== undefined && rows[rowKey][columnKey] !== undefined) {
-
-                    sheetData[rowKey] = sheetData[rowKey] || {};
-                    sheetData[rowKey][columnKey] = rows[rowKey][columnKey];
+                    row.push(rows[rowKey][columnKey]);
                 }
             }
         }
@@ -41,7 +41,7 @@ module.exports = {
         assert(spreadsheetId, "Spreadsheet key required. Look for it in the spreadsheet's URL (e.g. https://docs.google.com/spreadsheets/d/<spreadsheet_id>/edit)");
 
         options = {
-            //debug: true,
+            debug: true,
             spreadsheetId : spreadsheetId,
             worksheetId   : worksheetId,
             accessToken   : {
@@ -58,7 +58,7 @@ module.exports = {
                     this.log(error);
                     return error
                        ? this.fail(error) 
-                       : this.complete({sheet: this.pickSheetData(rows, startRow, startColumn, numRows, numColumns)})
+                       : this.complete({values: this.pickSheetData(rows, startRow, startColumn, numRows, numColumns)})
                     ;
                 }.bind(this));
         }.bind(this));
