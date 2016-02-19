@@ -62,6 +62,8 @@ module.exports = _.merge({
              * You should update this section with some test input for testing your module
              */
             input: {
+                numRows        : '10',
+                numColumns     : '10',
                 spreadsheet_id : '117M1ade8ZbpigiKgve25SM7WCm5Q_taHuggQDSCfC18'
             }
         }

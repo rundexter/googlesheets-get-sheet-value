@@ -9,6 +9,9 @@ module.exports = {
           , row = []
         ;
 
+        numRows    = numRows    || _.values(rows).length;
+        numColumns = numColumns || _.reduce(rows, function(max, i) { return Math.max(max, _.values(i).length); }, -1);
+
         for (var rowKey = startRow; rowKey <= numRows; rowKey++) {
             row = [];
             sheetData.push(row);
@@ -33,8 +36,8 @@ module.exports = {
           , worksheetId   = step.input('worksheet', 1).first() || 1
           , startRow      = step.input('startRow', 1).first() || 1
           , startColumn   = step.input('startColumn', 1).first() || 1
-          , numRows       = step.input('numRows').first() || 10
-          , numColumns    = step.input('numColumns').first() || 10
+          , numRows       = step.input('numRows').first()
+          , numColumns    = step.input('numColumns').first()
           , options
         ;
 
